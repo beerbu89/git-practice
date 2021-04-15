@@ -1,0 +1,16 @@
+{
+    "items": [
+        {
+            "type": "0",
+            "image": "/img/lineNoticeMenu1.png"
+        },
+        {
+            "type": "1",
+            "image": "/img/lineNoticeMenu2.png"
+        },
+        {
+            "type": "2",
+            "image": "/img/lineNoticeMenu3.png"
+        }
+    ]
+}

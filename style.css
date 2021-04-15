@@ -1,0 +1,658 @@
+:root {
+  /* size */
+  --logoImg-size: 100px;
+
+  --padding: 20px;
+
+  --coffeeArea-height: 50vh;
+  --coffeeArea-top: -665px;
+  --coffeMenu-li-width: 20%;
+  --coffeMenu-li-a-bottom: 10px;
+  --coffeeInfo-height: 30%;
+  --coffeeInfo-top: 30px;
+  --coffeeInfo-left: 40px;
+  --infoColorText-bottom: 10px;
+
+  --navBar-padding: 50px;
+  --logo-padding: 30px;
+  --utilNavLi-padding: 20px;
+  --subNavLi-padding: 20px;
+
+  --lineNotice-left-width: 50%;
+
+  --fontSize-small: 12px;
+
+  --plusIcon-size: 40px;
+
+  --linenotice_left-h2-right: 10px;
+  --linenotice_left-h2-left: 40px;
+
+  --linenotice_right_span: 20px;
+
+  --lineNoticeMenu-height: 60vh;
+  --lineNoticeMenuBtn-size: 80px;
+
+  --infoTitle-top: -100px;
+  --seemore-padding: 10px;
+
+  --new-rewards_wrap-height: 40vh;
+  --new-rewards_wrap-top: 40px;
+  --new-rewards_wrap-bottom: 40px;
+  --new-rewards-img-size: 100px;
+  --new-rewards_inner-width: 80%;
+  --new-rewards_inner-height: 90%;
+  --new-rewards_inner-top: 30px;
+  --rewards-img-width: 20%;
+  --rewards-img-height: 100%;
+  --rewards-img-size: 175px;
+  --rewards-content-width: 80%;
+  --rewards-content-height: 90%;
+
+  --btn-signin-top: -75px;
+  --btn-signin-button-height: 38px;
+  --btn-signin-button-lineHeight: 36px;
+  --btn-signin-button-padding: 18.5px;
+  --btn-signin-button-fontSize: 14px;
+  --btn-signin-button-radius: 5px;
+
+  --rewards-content_iner-size: 90%;
+  --sign-in-width: 100%;
+  --sign-in-height: 55%;
+  --signText-width: 70%;
+  --signText-padding-left: 20px;
+  --signText-title-font-size: 24px;
+  --signBtns-height: 30px;
+  --signBtns-paddign-top: 60px;
+  --gift-width: 100%;
+  --gift-height: 30%;
+  --gift-padding-left: 45px;
+
+  --giftText-width: 80%;
+  --giftText-font-size: 15px;
+  --giftBtn-padding-top: 60px;
+  --giftBtn-padding-right: 7px;
+  --giftBtn-width: 150px;
+  --giftBtn-button-height: 30px;
+
+  --bean_img_box-width: 40%;
+  --mian-bean-item-width: 50%;
+  --bean_txt_box-padding-left: 40%;
+  --bean_text-padding-bottom: 40px;
+  --bean-colorTitle-font-size: 20px;
+  --bean-colorSub-font-size: 25px;
+  --bean_btn-width: 125px;
+  --bean_btn-height: 38px;
+  --bean_btn-border: 2px;
+  --bean_btn-border-radius: 5px;
+  --bean_btn-font-size: 15px;
+  --bean_btn-line-height: 34px;
+
+  /* color */
+  --fontColor: #666;
+  --black: black;
+  --white: white;
+  --new-rewards_wrap-color: #1e3932;
+  --bean_btn-color: #231815;
+
+  /* animation */
+  /* utilNav */
+  --padding-bottom: -10px;
+  --width: 50%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+/* nav */
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--navBar-padding);
+}
+
+.logo {
+  width: var(--logoImg-size);
+  height: var(--logoImg-size);
+
+  padding-top: var(--logo-padding);
+}
+
+nav {
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+/* sign 등 */
+.utilNav {
+  display: flex;
+}
+
+.utilNav li {
+  padding-left: var(--utilNavLi-padding);
+}
+
+.utilNav li:hover {
+  cursor: pointer;
+}
+
+.utilNav li a {
+  position: relative;
+}
+
+.utilNav li a:before {
+  content: "";
+  position: absolute; /*before를 절대위치*/
+  background-color: dodgerblue;
+  height: 2px;
+  width: 0;
+  bottom: var(--padding-bottom); /*bottom을 주어, 글자 밑에 위치시킴*/
+  transition: 0.5s; /*가상클래스에 이벤트 발생시 시간 지정*/
+
+  left: var(--width); /*만약 왼쪽에서부터 커지게하려면-> left를 0으로 두면 됨*/
+  transform: translateX(-50%);
+}
+
+.utilNav li a:hover::before {
+  width: 100%;
+}
+
+.searchText {
+  display: inline;
+}
+
+.searchIcon .searchText {
+  display: none;
+}
+
+.searchIcon .searchText .active {
+  display: inline;
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* coffee 등 */
+.subNav {
+  display: flex;
+  justify-content: center;
+  color: #666;
+  margin: 0;
+}
+
+.subNav li {
+  padding-left: var(--subNavLi-padding);
+  cursor: pointer;
+  height: 100%;
+}
+
+.subNav li :hover {
+  background: var(--black);
+}
+
+/* nav 끝 */
+
+/* 커피 hideBar*/
+.coffeeArea {
+  background: #212121;
+  width: 100%;
+  height: var(--coffeeArea-height);
+  position: relative;
+  top: var(--coffeeArea-top);
+  display: none;
+}
+
+.coffeeArea .hover {
+  display: block;
+}
+
+.coffeMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.coffeMenu li {
+  display: flex;
+  flex-direction: column;
+  width: var(--coffeMenu-li-width);
+}
+
+.coffeMenu li a {
+  color: white;
+  padding-bottom: var(--coffeMenu-li-a-bottom);
+}
+
+.coffeMenu li a:hover {
+  text-decoration: underline;
+}
+
+#hideSmallText {
+  color: var(--fontColor);
+  font-size: var(--fontSize-small);
+}
+
+#hideSmallText:hover {
+  text-decoration: underline;
+}
+
+.coffeeInfo {
+  background: #000000;
+  height: var(--coffeeInfo-height);
+
+  padding-top: var(--coffeeInfo-top);
+  padding-left: var(--coffeeInfo-left);
+}
+
+#infoColorText {
+  color: green;
+  padding-bottom: var(--infoColorText-bottom);
+}
+
+.infoLink {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 커피 hide bar */
+끝
+
+/* lineNotice */
+.lineNotice {
+  display: flex;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* lineNotice left */
+.lineNotice_left {
+  width: 50%;
+  background-color: var(--black);
+  width: var(--lineNotice-left-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lineNotice_left H2 {
+  color: var(--white);
+  padding-right: var(--linenotice_left-h2-right);
+  padding-left: var(--linenotice_left-h2-left);
+}
+
+.lineNotice_left a {
+  color: var(--white);
+}
+
+.lineNotice_left a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.lineNotice_Inner {
+  display: flex;
+  align-items: center;
+}
+
+.plusIcon #plus {
+  color: var(--white);
+  padding-right: var(--plusIcon-size);
+  font-size: var(--plusIcon-size);
+}
+
+/*lineNotice right */
+.lineNotice_right {
+  width: 50%;
+  color: red;
+}
+
+.lineNotice_down {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineNotice_down span {
+  padding-right: var(--linenotice_right_span);
+}
+
+.lineNotice_down #down {
+  font-size: var(--plusIcon-size);
+}
+
+/* lineNotice 끝*/
+
+/* lineNoticeMenu */
+.lineNoticeMenu {
+  height: var(--lineNoticeMenu-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+#lineNoticeMenuLeftBtn {
+  font-size: var(--lineNoticeMenuBtn-size);
+}
+
+#lineNoticeMenuRightBtn {
+  font-size: var(--lineNoticeMenuBtn-size);
+}
+
+.lineNoticeMenuList {
+  display: flex;
+  width: 80%;
+}
+
+.lineNoticeMenuList li {
+  padding-right: 10px;
+}
+
+.lineNoticeMenuListInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lineNotice_down #down.active {
+  transform: rotate(180deg);
+}
+
+/* noticeInfo */
+
+.noticeInfo {
+  display: none;
+}
+
+.noticeInfoTitle {
+  margin-top: var(--infoTitle-top);
+}
+
+.noticeInfoKorean {
+  padding-bottom: var(--padding);
+}
+
+.noticeInfoDate {
+  padding-bottom: var(--padding);
+}
+
+.seemore {
+  padding: var(--seemore-padding) var(--padding);
+  margin-bottom: var(--padding);
+}
+
+.noticeScroll {
+  color: green;
+}
+
+/* notice 끝 */
+
+/* new rewards */
+.new-rewards_wrap {
+  background-color: var(--new-rewards_wrap-color);
+  height: var(--new-rewards_wrap-height);
+  display: flex;
+  justify-content: center;
+  padding-top: var(--new-rewards_wrap-top);
+}
+
+.new-rewards_inner {
+  width: var(--new-rewards_inner-width);
+  height: var(--new-rewards_inner-height);
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--new-rewards_inner-top);
+}
+
+.rewards-img {
+  width: var(--rewards-img-width);
+  height: var(--rewards-img-height);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rewards-img img {
+  width: var(--rewards-img-size);
+  height: var(--rewards-img-size);
+  text-align: center;
+}
+.rewards-content {
+  width: var(--rewards-content-width);
+  height: var(--rewards-content-height);
+
+  display: flex;
+  align-items: center;
+}
+
+.rewards-content_iner {
+  width: var(--rewards-content_iner-size);
+  height: var(--rewards-content_iner-size);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in {
+  width: var(--sign-in-width);
+  height: var(--sign-in-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.signText {
+  width: var(--signText-width);
+  padding-left: var(--signText-padding-left);
+}
+
+.signText-title {
+  font-size: var(--signText-title-font-size);
+}
+
+.signBtns {
+  height: var(--signBtns-height);
+  padding-top: var(--signBtns-paddign-top);
+}
+
+.signBtns a {
+  color: white;
+}
+
+.signBtns a:hover {
+  text-decoration: underline;
+}
+
+.sign-btn {
+  background-color: #00704a;
+  border: 2px solid #00704a;
+  cursor: pointer;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.gift {
+  width: var(--gift-width);
+  height: var(--gift-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--gift-padding-left);
+}
+
+.giftText {
+  width: var(--giftText-width);
+  font-size: var(--giftText-font-size);
+}
+
+.giftBtn {
+  padding-top: var(--giftBtn-padding-top);
+  padding-right: var(--giftBtn-padding-right);
+  width: var(--giftBtn-width);
+}
+
+.giftBtn button {
+  height: var(--giftBtn-button-height);
+  background-color: transparent;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.giftBtn button a {
+  color: white;
+}
+
+.giftBtn button a:hover {
+  text-decoration: underline;
+}
+
+/* rewards 끝 */
+
+/*시즌 프로모션 배너 */
+
+.main-bean_wrap {
+  display: flex;
+}
+
+.main-bean_inner {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-bean_Bg {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.bean_img_box {
+  position: absolute;
+  width: var(--bean_img_box-width);
+}
+.mian-bean-item {
+  width: var(--mian-bean-item-width);
+}
+
+.bean_txt_box {
+  position: absolute;
+  padding-left: var(--bean_txt_box-padding-left);
+}
+
+.bean_text {
+  padding-bottom: var(--bean_text-padding-bottom);
+}
+
+#color1 {
+  color: #a1887f;
+  font-size: var(--bean-colorTitle-font-size);
+}
+
+#color2 {
+  color: #725b53;
+  font-size: var(--bean-colorSub-font-size);
+}
+
+#smallText {
+  color: #8c7b75;
+}
+
+.bean_btn {
+  width: var(--bean_btn-width);
+  height: var(--bean_btn-height);
+  color: var(#231815);
+  border: var(--bean_btn-border) solid var(#231815);
+  border-radius: var(--bean_btn-border-radius);
+  text-align: center;
+  font-size: var(--bean_btn-font-size);
+  line-height: var(--bean_btn-line-height);
+  box-sizing: border-box;
+}
+
+.bean_btn:hover {
+  background-color: black;
+  transition: background-color 0.7s, color 0.7s;
+}
+
+.bean_btn a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: white;
+}
+
+/* 시즌 프로모션 배너끝 */
+
+/* 리저브 배너 */
+
+.reserve_inner {
+  width: 100%;
+}
+
+.reserve_img img {
+  width: 100%;
+}
+
+.reserve_btn {
+  position: absolute;
+  width: 125px;
+  height: 38px;
+  border-radius: 5px;
+  border: 2px solid #815932;
+  text-align: center;
+  line-height: 34px;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #815932;
+}
+
+.reserve_btn:hover {
+  cursor: pointer;
+  background-color: #815932;
+  transition: background-color 0.7s, color 0.7s;
+}
+
+.reserve_btn a {
+  color: #815932;
+  width: 100%;
+  height: 100%;
+}
+
+/* 메인 
+/*asdasdsd*/
+@media screen and (max-width: 1050px) {
+  .searchIcon input {
+    display: block;
+  }
+
+  html {
+    font-size: 80%;
+  }
+}
